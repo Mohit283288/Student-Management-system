@@ -6,9 +6,8 @@
 students = []
 
 
-# ------------------------------------------
+
 # 1. ADD STUDENT
-# ------------------------------------------
 def add_student():
     print("\n--- ADD STUDENT ---")
 
@@ -42,53 +41,49 @@ def add_student():
     print("Student added successfully!")
 
 
-# ------------------------------------------
 # 2. VIEW ALL STUDENTS
-# ------------------------------------------
 def view_students():
-    print("\n--- ALL STUDENTS ---")
+    print("\n ALL STUDENTS")
 
     if len(students) == 0:
         print("No students found.")
         return
 
     for student in students:
-        print("----------------------")
-        print("Roll No    :", student["roll"])
-        print("Name       :", student["name"])
-        print("Python     :", student["python"])
-        print("Maths      :", student["maths"])
-        print("Science    :", student["science"])
+        print(" ")
+        print("Roll No :", student["roll"])
+        print("Name    :", student["name"])
+        print("Python  :", student["python"])
+        print("Maths   :", student["maths"])
+        print("Science :", student["science"])
         print("Attendance :", student["attendance"], "%")
 
 
-# ------------------------------------------
+
 # 3. SEARCH STUDENT
-# ------------------------------------------
+
 def search_student():
-    print("\n--- SEARCH STUDENT ---")
+    print("\nSEARCH STUDENT")
 
     roll = int(input("Enter roll number: "))
 
     for student in students:
         if student["roll"] == roll:
             print("\nStudent Found!")
-            print("Roll No    :", student["roll"])
-            print("Name       :", student["name"])
-            print("Python     :", student["python"])
-            print("Maths      :", student["maths"])
-            print("Science    :", student["science"])
+            print("Roll No  :", student["roll"])
+            print("Name     :", student["name"])
+            print("Python   :", student["python"])
+            print("Maths    :", student["maths"])
+            print("Science  :", student["science"])
             print("Attendance :", student["attendance"], "%")
             return
 
     print("Student not found.")
 
 
-# ------------------------------------------
 # 4. UPDATE STUDENT
-# ------------------------------------------
 def update_student():
-    print("\n--- UPDATE STUDENT ---")
+    print("\nUPDATE STUDENT")
 
     roll = int(input("Enter roll number: "))
 
@@ -124,9 +119,7 @@ def update_student():
     print("Student not found.")
 
 
-# ------------------------------------------
 # 5. DELETE STUDENT
-# ------------------------------------------
 def delete_student():
     print("\n--- DELETE STUDENT ---")
 
@@ -141,11 +134,9 @@ def delete_student():
     print("Student not found.")
 
 
-# ------------------------------------------
 # 6. RECORD ATTENDANCE
-# ------------------------------------------
 def record_attendance():
-    print("\n--- RECORD ATTENDANCE ---")
+    print("\nRECORD ATTENDANCE")
 
     roll = int(input("Enter roll number: "))
 
@@ -164,11 +155,9 @@ def record_attendance():
     print("Student not found.")
 
 
-# ------------------------------------------
 # 7. VIEW ATTENDANCE
-# ------------------------------------------
 def view_attendance():
-    print("\n--- ATTENDANCE ---")
+    print("\nATTENDANCE")
 
     if len(students) == 0:
         print("No students found.")
@@ -185,11 +174,10 @@ def view_attendance():
         )
 
 
-# ------------------------------------------
 # 8. CALCULATE RESULT
-# ------------------------------------------
+
 def calculate_result():
-    print("\n--- STUDENT RESULT ---")
+    print("\n STUDENT RESULT")
 
     roll = int(input("Enter roll number: "))
 
@@ -217,7 +205,7 @@ def calculate_result():
             else:
                 grade = "F"
 
-            print("\n--- RESULT ---")
+            print("\nRESULT ")
             print("Name       :", student["name"])
             print("Roll No    :", student["roll"])
             print("Total      :", total)
@@ -229,11 +217,9 @@ def calculate_result():
     print("Student not found.")
 
 
-# ------------------------------------------
 # 9. COMPLETE STUDENT REPORT
-# ------------------------------------------
 def student_report():
-    print("\n--- COMPLETE STUDENT REPORT ---")
+    print("\n COMPLETE STUDENT REPORT")
 
     roll = int(input("Enter roll number: "))
 
@@ -261,37 +247,35 @@ def student_report():
             else:
                 grade = "F"
 
-            print("\n==============================")
+            print("\n")
             print("       STUDENT REPORT")
-            print("==============================")
+            print("")
             print("Name       :", student["name"])
             print("Roll No    :", student["roll"])
-            print("------------------------------")
+            print("")
             print("Python     :", student["python"])
             print("Maths      :", student["maths"])
             print("Science    :", student["science"])
-            print("------------------------------")
+            print("")
             print("Total      :", total)
             print("Percentage :", round(percentage, 2), "%")
             print("Grade      :", grade)
             print("Attendance :", student["attendance"], "%")
-            print("==============================")
+            print("")
 
             return
 
     print("Student not found.")
 
 
-# ------------------------------------------
 # MAIN MENU
-# ------------------------------------------
 
 while True:
 
     print("\n")
-    print("======================================")
+    print("")
     print("       STUDENT MANAGEMENT SYSTEM")
-    print("======================================")
+    print("")
 
     print("1. Add Student")
     print("2. View All Students")
