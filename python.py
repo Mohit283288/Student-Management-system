@@ -1,11 +1,7 @@
-# ==========================================
+
 # STUDENT MANAGEMENT SYSTEM
-# Python Only - Simple Project
-# ==========================================
 
 students = []
-
-
 
 # 1. ADD STUDENT
 def add_student():
