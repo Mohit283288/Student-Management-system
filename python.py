@@ -117,7 +117,7 @@ def update_student():
 
 # 5. DELETE STUDENT
 def delete_student():
-    print("\n--- DELETE STUDENT ---")
+    print("\nDELETE STUDENT")
 
     roll = int(input("Enter roll number: "))
 
@@ -270,7 +270,7 @@ while True:
 
     print("\n")
     print("")
-    print("       STUDENT MANAGEMENT SYSTEM")
+    print("STUDENT MANAGEMENT SYSTEM")
     print("")
 
     print("1. Add Student")
