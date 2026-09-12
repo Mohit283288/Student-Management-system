@@ -5,7 +5,7 @@ students = []
 
 # 1. ADD STUDENT
 def add_student():
-    print("\n--- ADD STUDENT ---")
+    print("\n ADD STUDENT")
 
     roll = int(input("Enter roll number: "))
 
