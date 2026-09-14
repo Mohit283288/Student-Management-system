@@ -7,32 +7,32 @@ students = []
 def add_student():
     print("\n ADD STUDENT")
 
-    roll = int(input("Enter roll number: "))
+    r = int(input("Enter roll number: "))
 
     # Check duplicate roll number
-    for student in students:
-        if student["roll"] == roll:
+    for s in students:
+        if s["roll"] == r:
             print("Roll number already exists!")
             return
 
-    name = input("Enter student name: ")
+    n = input("Enter student name: ")
 
     python_marks = float(input("Enter Python marks: "))
     maths_marks = float(input("Enter Maths marks: "))
     science_marks = float(input("Enter Science marks: "))
 
-    attendance = float(input("Enter attendance percentage: "))
+    A = float(input("Enter attendance percentage: "))
 
-    student = {
-        "roll": roll,
-        "name": name,
+    s = {
+        "roll": r,
+        "name": n,
         "python": python_marks,
         "maths": maths_marks,
         "science": science_marks,
-        "attendance": attendance
+        "attendance": A
     }
 
-    students.append(student)
+    students.append(s)
 
     print("Student added successfully!")
 
@@ -45,15 +45,14 @@ def view_students():
         print("No students found.")
         return
 
-    for student in students:
+    for s in students:
         print(" ")
-        print("Roll No :", student["roll"])
-        print("Name    :", student["name"])
-        print("Python  :", student["python"])
-        print("Maths   :", student["maths"])
-        print("Science :", student["science"])
-        print("Attendance :", student["attendance"], "%")
-
+        print("Roll No :", s["roll"])
+        print("Name    :", s["name"])
+        print("Python  :", s["python"])
+        print("Maths   :", s["maths"])
+        print("Science :", s["science"])
+        print("Attendance :", s["attendance"], "%")
 
 
 # 3. SEARCH STUDENT
@@ -61,17 +60,17 @@ def view_students():
 def search_student():
     print("\nSEARCH STUDENT")
 
-    roll = int(input("Enter roll number: "))
+    r = int(input("Enter roll number: "))
 
-    for student in students:
-        if student["roll"] == roll:
+    for s in students:
+        if s["roll"] == r:
             print("\nStudent Found!")
-            print("Roll No  :", student["roll"])
-            print("Name     :", student["name"])
-            print("Python   :", student["python"])
-            print("Maths    :", student["maths"])
-            print("Science  :", student["science"])
-            print("Attendance :", student["attendance"], "%")
+            print("Roll No  :", s["roll"])
+            print("Name     :", s["name"])
+            print("Python   :", s["python"])
+            print("Maths    :", s["maths"])
+            print("Science  :", s["science"])
+            print("Attendance :", s["attendance"], "%")
             return
 
     print("Student not found.")
@@ -81,33 +80,33 @@ def search_student():
 def update_student():
     print("\nUPDATE STUDENT")
 
-    roll = int(input("Enter roll number: "))
+    r = int(input("Enter roll number: "))
 
-    for student in students:
-        if student["roll"] == roll:
+    for s in students:
+        if s["roll"] == r:
 
             print("Leave blank if you don't want to change a value.")
 
-            name = input("Enter new name: ")
+            n = input("Enter new name: ")
 
-            if name != "":
-                student["name"] = name
+            if n != "":
+                s["name"] = n
 
             marks = input("Enter new Python marks: ")
             if marks != "":
-                student["python"] = float(marks)
+                s["python"] = float(marks)
 
             marks = input("Enter new Maths marks: ")
             if marks != "":
-                student["maths"] = float(marks)
+                s["maths"] = float(marks)
 
             marks = input("Enter new Science marks: ")
             if marks != "":
-                student["science"] = float(marks)
+                s["science"] = float(marks)
 
-            attendance = input("Enter new attendance: ")
-            if attendance != "":
-                student["attendance"] = float(attendance)
+            A = input("Enter new attendance: ")
+            if A != "":
+                s["attendance"] = float(A)
 
             print("Student updated successfully!")
             return
@@ -119,11 +118,11 @@ def update_student():
 def delete_student():
     print("\nDELETE STUDENT")
 
-    roll = int(input("Enter roll number: "))
+    r = int(input("Enter roll number: "))
 
-    for student in students:
-        if student["roll"] == roll:
-            students.remove(student)
+    for s in students:
+        if s["roll"] == r:
+            students.remove(s)
             print("Student deleted successfully!")
             return
 
@@ -134,16 +133,16 @@ def delete_student():
 def record_attendance():
     print("\nRECORD ATTENDANCE")
 
-    roll = int(input("Enter roll number: "))
+    r = int(input("Enter roll number: "))
 
-    for student in students:
-        if student["roll"] == roll:
+    for s in students:
+        if s["roll"] == r:
 
-            attendance = float(
+            A = float(
                 input("Enter attendance percentage: ")
             )
 
-            student["attendance"] = attendance
+            s["attendance"] = A
 
             print("Attendance updated successfully!")
             return
@@ -159,13 +158,13 @@ def view_attendance():
         print("No students found.")
         return
 
-    for student in students:
+    for s in students:
         print(
-            student["roll"],
+            s["roll"],
             "-",
-            student["name"],
+            s["name"],
             "-",
-            student["attendance"],
+            s["attendance"],
             "%"
         )
 
@@ -175,38 +174,38 @@ def view_attendance():
 def calculate_result():
     print("\n STUDENT RESULT")
 
-    roll = int(input("Enter roll number: "))
+    r = int(input("Enter roll number: "))
 
-    for student in students:
-        if student["roll"] == roll:
+    for s in students:
+        if s["roll"] == r:
 
             total = (
-                student["python"]
-                + student["maths"]
-                + student["science"]
+                s["python"]
+                + s["maths"]
+                + s["science"]
             )
 
-            percentage = total / 3
+            p = total / 3
 
-            if percentage >= 90:
-                grade = "A+"
-            elif percentage >= 80:
-                grade = "A"
-            elif percentage >= 70:
-                grade = "B"
-            elif percentage >= 60:
-                grade = "C"
-            elif percentage >= 50:
-                grade = "D"
+            if p >= 90:
+                G = "A+"
+            elif p >= 80:
+                G = "A"
+            elif p >= 70:
+                G = "B"
+            elif p >= 60:
+                G = "C"
+            elif p >= 50:
+                G = "D"
             else:
-                grade = "F"
+                G = "F"
 
             print("\nRESULT ")
-            print("Name       :", student["name"])
-            print("Roll No    :", student["roll"])
+            print("Name       :", s["name"])
+            print("Roll No    :", s["roll"])
             print("Total      :", total)
-            print("Percentage :", round(percentage, 2), "%")
-            print("Grade      :", grade)
+            print("Percentage :", round(p, 2), "%")
+            print("Grade      :", G)
 
             return
 
@@ -217,46 +216,46 @@ def calculate_result():
 def student_report():
     print("\n COMPLETE STUDENT REPORT")
 
-    roll = int(input("Enter roll number: "))
+    r = int(input("Enter roll number: "))
 
-    for student in students:
-        if student["roll"] == roll:
+    for s in students:
+        if s["roll"] == r:
 
             total = (
-                student["python"]
-                + student["maths"]
-                + student["science"]
+                s["python"]
+                + s["maths"]
+                + s["science"]
             )
 
-            percentage = total / 3
+            p = total / 3
 
-            if percentage >= 90:
-                grade = "A+"
-            elif percentage >= 80:
-                grade = "A"
-            elif percentage >= 70:
-                grade = "B"
-            elif percentage >= 60:
-                grade = "C"
-            elif percentage >= 50:
-                grade = "D"
+            if p >= 90:
+                G = "A+"
+            elif p >= 80:
+                G = "A"
+            elif p >= 70:
+                G = "B"
+            elif p >= 60:
+                G = "C"
+            elif p >= 50:
+                G = "D"
             else:
-                grade = "F"
+                G = "F"
 
             print("\n")
             print("       STUDENT REPORT")
             print("")
-            print("Name       :", student["name"])
-            print("Roll No    :", student["roll"])
+            print("Name       :", s["name"])
+            print("Roll No    :", s["roll"])
             print("")
-            print("Python     :", student["python"])
-            print("Maths      :", student["maths"])
-            print("Science    :", student["science"])
+            print("Python     :", s["python"])
+            print("Maths      :", s["maths"])
+            print("Science    :", s["science"])
             print("")
             print("Total      :", total)
-            print("Percentage :", round(percentage, 2), "%")
-            print("Grade      :", grade)
-            print("Attendance :", student["attendance"], "%")
+            print("Percentage :", round(p, 2), "%")
+            print("Grade      :", G)
+            print("Attendance :", s["attendance"], "%")
             print("")
 
             return
@@ -284,36 +283,36 @@ while True:
     print("9. Complete Student Report")
     print("10. Exit")
 
-    choice = input("Enter your choice: ")
+    C = input("Enter your choice: ")
 
-    if choice == "1":
+    if C == "1":
         add_student()
 
-    elif choice == "2":
+    elif C == "2":
         view_students()
 
-    elif choice == "3":
+    elif C == "3":
         search_student()
 
-    elif choice == "4":
+    elif C == "4":
         update_student()
 
-    elif choice == "5":
+    elif C == "5":
         delete_student()
 
-    elif choice == "6":
+    elif C == "6":
         record_attendance()
 
-    elif choice == "7":
+    elif C == "7":
         view_attendance()
 
-    elif choice == "8":
+    elif C == "8":
         calculate_result()
 
-    elif choice == "9":
+    elif C == "9":
         student_report()
 
-    elif choice == "10":
+    elif C == "10":
         print("Thank you for using Student Management System!")
         break
 
